@@ -1,0 +1,30 @@
+{
+    "name": "rosamarsky/laravel-command-bus",
+    "description": "Command Bus",
+    "authors": [
+        {
+            "name": "Roman Samarsky",
+            "email": "rosamarsky@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.6",
+        "sebastian/version": "^1.0.1",
+        "mockery/mockery": "0.9.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Rosamarsky\\CommandBus\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rosamarsky\\CommandBus\\Tests\\": "tests"
+        }
+    },
+    "license": "MIT"
+}
