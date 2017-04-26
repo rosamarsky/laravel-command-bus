@@ -7,10 +7,12 @@
         </testsuite>
     </testsuites>
 
-    <!-- Whitelist for code coverage -->
     <filter>
         <whitelist>
             <directory suffix=".php">./src/</directory>
+            <exclude>
+                <file>src/CommandBusServiceProvider.php</file>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>
