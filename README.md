@@ -3,14 +3,9 @@
 > Simple Command Bus for Laravel framework
 
 ## Installation
-
-Require this package in your `composer.json` and update composer.
+    composer require rosamarsky/laravel-command-bus
     
-```php
-"rosamarsky/laravel-command-bus ": "^1.0"
-```
-    
-After updating composer, add the ServiceProvider to the providers array in `config/app.php`
+Add the Service Provider to the providers array in `config/app.php`
 
 ```php
 Rosamarsky\CommandBus\CommandBusServiceProvider::class,
@@ -24,8 +19,8 @@ class UserController extends AbstractController
     public function store(Request $request)
     {
         $user = $this->dispatch(new RegisterUser(
-            trim($request->input('email')),
-            trim($request->input('password'))
+            $request->input('email'),
+            $request->input('password')
         ));
     
         return $user;
@@ -112,8 +107,8 @@ class UserController extends AbstractController
     public function store(Request $request)
     {
         $user = $this->dispatch(new RegisterUser(
-            trim($request->input('email')),
-            trim($request->input('password'))
+            $request->input('email'),
+            $request->input('password')
         ));
     
         return $user;
