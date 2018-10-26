@@ -1,6 +1,6 @@
 {
     "name": "rosamarsky/laravel-command-bus",
-    "version": "1.0",
+    "version": "1.0.2",
     "description": "Simple Command Bus for Laravel framework",
     "keywords": [
         "laravel",
@@ -17,6 +17,13 @@
             "role": "Developer"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rosamarsky\\CommandBus\\CommandBusServiceProvider"
+            ]
+        }
+    },
     "require": {
         "illuminate/container": "*",
         "illuminate/support": "*"
