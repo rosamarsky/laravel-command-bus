@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus;
 
 use Illuminate\Container\Container as IoC;
+use Illuminate\Container\EntryNotFoundException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class LaravelContainer implements Container
 {
@@ -25,9 +28,11 @@ class LaravelContainer implements Container
      * Resolve the class out of the Container
      *
      * @param string $class
+     *
      * @return mixed
+     * @throws BindingResolutionException|EntryNotFoundException
      */
-    public function make($class)
+    public function make(string $class)
     {
         return $this->container->make($class);
     }

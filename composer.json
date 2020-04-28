@@ -1,6 +1,6 @@
 {
     "name": "rosamarsky/laravel-command-bus",
-    "version": "1.0.2",
+    "version": "2.0",
     "description": "Simple Command Bus for Laravel framework",
     "keywords": [
         "laravel",
@@ -25,6 +25,7 @@
         }
     },
     "require": {
+        "php": "^7.1",
         "illuminate/container": "*",
         "illuminate/support": "*"
     },

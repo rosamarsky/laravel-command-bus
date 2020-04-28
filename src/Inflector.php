@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus;
 
@@ -10,5 +11,5 @@ interface Inflector
      * @param Command $command
      * @return string
      */
-    public function inflect(Command $command);
+    public function inflect(Command $command): string;
 }

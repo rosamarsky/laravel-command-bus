@@ -5,8 +5,7 @@
 ## Installation
     composer require rosamarsky/laravel-command-bus
     
-Add the Service Provider to the providers array in `config/app.php`
-
+If your Laravel version is less than 5.5, add the following line to the providers array in `config / app.php`:
 ```php
 Rosamarsky\CommandBus\CommandBusServiceProvider::class,
 ```
@@ -38,18 +37,18 @@ class RegisterUser implements \Rosamarsky\CommandBus\Command
     private $email;
     private $password;
     
-    public function __construct($email, $password)
+    public function __construct(string $email, string $password)
     {
         $this->email = $email;
         $this->password = $password;
     }
     
-    public function email()
+    public function email(): string
     {
         return $this->email;
     }
     
-    public function password()
+    public function password(): string
     {
         return $this->password;
     }
@@ -68,7 +67,7 @@ class RegisterUserHandler implements \Rosamarsky\CommandBus\Handler
         $this->userRepository = $userRepository;
     }
     
-    public function handle(\Rosamarsky\CommandBus\Command $command)
+    public function handle(\Rosamarsky\CommandBus\Command $command): User
     {
         $user = new User(
             $command->email(),

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus;
 
@@ -43,7 +44,7 @@ class CommandBus
      * @param Command $command
      * @return Handler
      */
-    private function handler(Command $command)
+    private function handler(Command $command): Handler
     {
         $class = $this->inflector->inflect($command);
 
