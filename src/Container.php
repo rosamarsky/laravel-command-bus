@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus;
 
@@ -10,5 +11,5 @@ interface Container
      * @param string $class
      * @return mixed
      */
-    public function make($class);
+    public function make(string $class);
 }

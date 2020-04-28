@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus\Tests;
 
@@ -19,7 +20,9 @@ class NameInflectorTest extends PHPUnit_Framework_TestCase
         $this->inflector = new NameInflector();
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function should_return_handler_class_name()
     {
         $this->assertEquals(

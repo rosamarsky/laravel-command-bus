@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus;
 
@@ -10,7 +11,7 @@ class NameInflector implements Inflector
      * @param Command $command
      * @return string
      */
-    public function inflect(Command $command)
+    public function inflect(Command $command): string
     {
         return get_class($command) . 'Handler';
     }

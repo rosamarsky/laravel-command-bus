@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Rosamarsky\CommandBus\Tests;
 
@@ -20,15 +21,26 @@ class LaravelContainerTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->container = new LaravelContainer(new Container);
+        $this->container = new LaravelContainer(new Container());
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function should_make_class()
     {
         $user = $this->container->make(User::class);
 
         $this->assertInstanceOf(User::class, $user);
         $this->assertEquals('Roman', $user->name);
+    }
+
+    /**
+     * @test
+     * @expectedException \Illuminate\Contracts\Container\BindingResolutionException
+     */
+    public function should_throw_exception_on_nonexistent_class()
+    {
+        $this->container->make('NonexistentClass');
     }
 }
